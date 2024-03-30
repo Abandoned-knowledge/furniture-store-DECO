@@ -1,0 +1,32 @@
+@import "./colors";
+
+$font: "Space Grotesk", sans-serif;
+
+.container {
+  width: 95%;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.body-text {
+  font-family: $font;
+  color: $colorDark;
+  text-decoration: none;
+
+  &_lighten {
+    color: lighten($colorDark, 30);
+  }
+  &_title {
+   font-weight: bold;
+   font-size: 20px;
+  }
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
