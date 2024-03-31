@@ -8,6 +8,41 @@ import BehanceIcon from '../icons/social-media/BehanceIcon.vue';
 import DribbbleIcon from '../icons/social-media/DribbbleIcon.vue';
 import TelegramIcon from '../icons/social-media/TelegramIcon.vue';
 
+const footerLists = [
+    {
+        id: 1,
+        title: "Help & Information",
+        links: [
+            "Support Center",
+            "Delivery & Returns",
+            "Terms & Conditions",
+            "Products Return",
+            "Wholesale Policy",
+        ]
+    },
+    {
+        id: 2,
+        title: "Quick Shop",
+        links: [
+            "Pagination",
+            "About Us",
+            "Contact Us",
+            "Investor Site",
+            "Term of use",
+        ]
+    },
+    {
+        id: 3,
+        title: "Categories",
+        links: [
+            "Living Room Furniture",
+            "Accent Furniture",
+            "Home office Furniture",
+            "Kid's Furniture",
+            "Dining Room Furniture",
+        ]
+    }
+];
 
 </script>
 
@@ -42,26 +77,8 @@ import TelegramIcon from '../icons/social-media/TelegramIcon.vue';
                     </ul>
                 </article>
 
-                <FooterList title="Help & Information">
-                    <RouterLink to="/" class="body-text body-text_lighten">Support Center</RouterLink>
-                    <RouterLink to="/" class="body-text body-text_lighten">Delivery & Returns</RouterLink>
-                    <RouterLink to="/" class="body-text body-text_lighten">Terms & Conditions</RouterLink>
-                    <RouterLink to="/" class="body-text body-text_lighten">Products Return</RouterLink>
-                    <RouterLink to="/" class="body-text body-text_lighten">Wholesale Policy</RouterLink>
-                </FooterList>
-                <FooterList title="Quick Shop">
-                    <RouterLink to="/" class="body-text body-text_lighten">Pagination</RouterLink>
-                    <RouterLink to="/" class="body-text body-text_lighten">About Us</RouterLink>
-                    <RouterLink to="/" class="body-text body-text_lighten">Contact Us</RouterLink>
-                    <RouterLink to="/" class="body-text body-text_lighten">Investor Site</RouterLink>
-                    <RouterLink to="/" class="body-text body-text_lighten">Term of use</RouterLink>
-                </FooterList>
-                <FooterList title="Categories">
-                    <RouterLink to="/" class="body-text body-text_lighten">Living Room Furniture</RouterLink>
-                    <RouterLink to="/" class="body-text body-text_lighten">Accent Furniture</RouterLink>
-                    <RouterLink to="/" class="body-text body-text_lighten">Home office Furniture</RouterLink>
-                    <RouterLink to="/" class="body-text body-text_lighten">Kid's Furniture</RouterLink>
-                    <RouterLink to="/" class="body-text body-text_lighten">Dining Room Furniture</RouterLink>
+                <FooterList v-for="list in footerLists" :title="list.title" :key="list.id">
+                    <RouterLink v-for="link in list.links" to="/" class="body-text body-text_lighten">{{ link }}</RouterLink>
                 </FooterList>
 
             </section>
@@ -99,6 +116,7 @@ import TelegramIcon from '../icons/social-media/TelegramIcon.vue';
     flex-direction: column;
     gap: 50px;
     margin-top: 300px;
+
     &-up__wrapper {
         display: flex;
         justify-content: space-between;
@@ -107,34 +125,40 @@ import TelegramIcon from '../icons/social-media/TelegramIcon.vue';
             line-height: 2rem;
         }
     }
+
     &__discover {
         display: flex;
         flex-direction: column;
         width: 400px;
+
         .social-media {
             display: flex;
             align-items: center;
             gap: 20px;
         }
     }
+
     &-down__wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        .payments{
+        .payments {
             display: flex;
             align-items: center;
             gap: 40px;
         }
     }
+
     .icon {
         fill: $colorDark;
     }
-    &__line{
+
+    &__line {
         height: 2px;
         background-color: lighten($colorGrey, 30);
     }
+
     .logo-icon {
         width: 300px;
         height: auto;

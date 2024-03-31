@@ -8,7 +8,8 @@ import Slider from './components/Slider.vue';
 <template>
   <Header/>
 
-  <Slider/>
+  <RouterView/>
+
 
   <Footer/>
 </template>

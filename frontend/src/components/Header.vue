@@ -5,6 +5,16 @@ import SearchIcon from './icons/header/SearchIcon.vue';
 import ProfileIcon from './icons/header/ProfileIcon.vue';
 import LikeHeartIcon from './icons/header/LikeHeartIcon.vue';
 import BagIcon from './icons/header/BagIcon.vue';
+import type { Component } from 'vue';
+
+interface MainNav { id: number | string, text: string, route: string }
+const mainNav: MainNav[] = [
+    { id: 1, text: "Furniture", route: "/furniture", },
+    { id: 2, text: "Homewares", route: "/homewares", },
+    { id: 3, text: "Chairs and stools", route: "/chairs", },
+    { id: 4, text: "Tables and desks", route: "/tables", },
+    { id: 5, text: "About", route: "/about", },
+];
 </script>
 
 <template>
@@ -14,26 +24,22 @@ import BagIcon from './icons/header/BagIcon.vue';
                 <LogoIcon class="logo-icon" />
             </RouterLink>
 
-            <nav class="nav">
-                <RouterLink to="/furniture" class="body-text">Furniture</RouterLink>
-                <RouterLink to="/homewares" class="body-text">Homewares</RouterLink>
-                <RouterLink to="/chairs" class="body-text">Chairs and stools</RouterLink>
-                <RouterLink to="/tables" class="body-text">Tables and desks</RouterLink>
-                <RouterLink to="/about" class="body-text">About</RouterLink>
-            </nav>
+            <!-- <nav class="nav">
+                <RouterLink v-for="item in mainNav" :to="item.route" :key="item.id" class="body-text">{{ item.text }}</RouterLink>
+            </nav> -->
 
             <nav class="nav add-nav">
-                <button class="add-nav__search">
-                    <SearchIcon class="icon" />
-                </button>
-                <RouterLink to="/profile">
-                    <ProfileIcon class="icon" />
-                </RouterLink>
+                <button class="add-nav__search"><SearchIcon class="icon" /></button>
+
+                <RouterLink to="/profile"><ProfileIcon class="icon" /></RouterLink>
+                
                 <RouterLink to="/liked">
                     <div class="add-nav__liked-mark"></div>
                     <LikeHeartIcon class="icon" />
                 </RouterLink>
+                
                 <RouterLink to="/bag">
+                    <div class="bag-count"></div>
                     <BagIcon class="icon" />
                 </RouterLink>
             </nav>
@@ -82,4 +88,3 @@ import BagIcon from './icons/header/BagIcon.vue';
     height: auto;
 }
 </style>
-./icons/header/BagIcon.vue./icons/header/LikeHeartIcon.vue./icons/header/ProfileIcon.vue./icons/header/SearchIcon.vue

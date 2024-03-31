@@ -1,21 +1,74 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 
+interface SliderContent {
+    id: number | string,
+    title: string,
+    route: string,
+    routeName: string,
+    imgSrc: string,
+}
+
+const sliderContent: SliderContent[] = [
+    {
+        id: 1,
+        title: "A NEW SLANT",
+        route: "/",
+        routeName: "shop sofas",
+        imgSrc: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        id: 2,
+        title: "AMAZING CHAIR",
+        route: "/",
+        routeName: "shop chairs",
+        imgSrc: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        id: 3,
+        title: "BEAUTIFUL SHOP",
+        route: "/",
+        routeName: "home",
+        imgSrc: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+];
+
+let slideIndex: number = ref(0);
+
+let paginationItem = ref();
+
+
+function selectPaginationItem(index: number) {
+    let pagArr = paginationItem._rawValue;
+    if (pagArr) {
+        pagArr.forEach((el) => {
+            el.classList.remove("slider__pagination_selected");
+        })
+        pagArr[index].classList.add("slider__pagination_selected");
+    }
+}
+
+onMounted(() => {
+    selectPaginationItem(0);
+})
 </script>
 
 <template>
     <article class="slider">
-        <section class="slider__pagination">
-            <div class="slider__pagination_circle slider__pagination_selected"></div>
-            <div class="slider__pagination_circle"></div>
-            <div class="slider__pagination_circle"></div>
+        <section v-if="sliderContent.length > 0" class="slider__pagination">
+            <div v-for="n in sliderContent.length" class="slider__pagination_circle"
+                @click="[slideIndex = n - 1, selectPaginationItem(n - 1)]" :key="n" ref="paginationItem"></div>
         </section>
-        <section class="slider__item">
+
+        <article v-for="content in sliderContent" :key="content.id" class="slider__item"
+            :style="{ transform: `translateX(-${slideIndex}00%)` }">
             <section class="slider__text">
-                <h1 class="h1-text white">A NEW SLANT</h1>
-                <a href="/" class="h2-text white">shop sofas</a>
+                <h1 class="h1-text white">{{ content.title }}</h1>
+                <a :href="content.route" class="h2-text white">{{ content.routeName }}</a>
             </section>
-            <img src="../assets/photo2.jpg" class="slider__photo" alt="slider__item sofa">
-        </section>
+            <img :src="content.imgSrc" class="slider__photo" :alt="content.title">
+        </article>
+
     </article>
 </template>
 
@@ -34,16 +87,18 @@
         position: absolute;
         display: flex;
         gap: 10px;
-        bottom: 0;
+        bottom: 15%;
+        left: 5%;
         z-index: 5;
 
         &_circle {
             cursor: pointer;
-            height: 20px;
-            width: 20px;
-            border: 3px solid white;
+            height: 15px;
+            width: 15px;
+            border: 2px solid white;
             border-radius: 9999px;
         }
+
         &_selected {
             background-color: white;
         }
@@ -53,6 +108,7 @@
         min-width: 100%;
         height: 100%;
         position: relative;
+        transition: all .5s ease;
     }
 
     &__text {
