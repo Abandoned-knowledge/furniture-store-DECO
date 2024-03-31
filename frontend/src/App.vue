@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Footer from './components/footer/Footer.vue';
-import Header from './components/Header.vue';
-import Slider from './components/Slider.vue';
+import Header from './components/header/Header.vue';
 
 </script>
 
@@ -10,9 +9,8 @@ import Slider from './components/Slider.vue';
 
   <RouterView/>
 
-
   <Footer/>
 </template>
 
 <style scoped lang="scss">
-</style>
+</style>./components/slider/Slider.vue./components/header/Header.vue

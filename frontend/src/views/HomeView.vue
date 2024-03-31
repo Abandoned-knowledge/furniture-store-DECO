@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Slider from '../components/Slider.vue';
+import Slider from '../components/slider/Slider.vue';
 </script>
 
 <template>
-    <Slider/>
+    <Slider />
 </template>
 
 <style scoped></style>

@@ -73,8 +73,8 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-@import '../scss/_colors';
-@import '../scss/_other';
+@import '@/scss/_colors';
+@import '@/scss/_other';
 
 .slider {
     display: flex;

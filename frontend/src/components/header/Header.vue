@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
-import LogoIcon from './icons/LogoIcon.vue';
-import SearchIcon from './icons/header/SearchIcon.vue';
-import ProfileIcon from './icons/header/ProfileIcon.vue';
-import LikeHeartIcon from './icons/header/LikeHeartIcon.vue';
-import BagIcon from './icons/header/BagIcon.vue';
+import LogoIcon from '@/components/icons/LogoIcon.vue';
+import SearchIcon from '@/components/icons/header/SearchIcon.vue';
+import ProfileIcon from '@/components/icons/header/ProfileIcon.vue';
+import LikeHeartIcon from '@/components/icons/header/LikeHeartIcon.vue';
+import BagIcon from '@/components/icons/header/BagIcon.vue';
 import type { Component } from 'vue';
 
 interface MainNav { id: number | string, text: string, route: string }
@@ -49,8 +49,8 @@ const mainNav: MainNav[] = [
 
 
 <style scoped lang="scss">
-@import '../scss/_colors.scss';
-@import '../scss/_other.scss';
+@import '@/scss/_colors.scss';
+@import '@/scss/_other.scss';
 
 .header {
     border-bottom: 1px solid lighten($colorGrey, 25);

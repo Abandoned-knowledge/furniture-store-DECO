@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import FooterList from './FooterList.vue';
-import LogoIcon from '../icons/LogoIcon.vue';
-import MasterCardIcon from '../icons/payment/MasterCardIcon.vue';
-import PayPalIcon from '../icons/payment/PayPalIcon.vue';
-import VisaIcon from '../icons/payment/VisaIcon.vue';
-import BehanceIcon from '../icons/social-media/BehanceIcon.vue';
-import DribbbleIcon from '../icons/social-media/DribbbleIcon.vue';
-import TelegramIcon from '../icons/social-media/TelegramIcon.vue';
+import LogoIcon from '@/components/icons/LogoIcon.vue';
+import MasterCardIcon from '@/components/icons/payment/MasterCardIcon.vue';
+import PayPalIcon from '@/components/icons/payment/PayPalIcon.vue';
+import VisaIcon from '@/components/icons/payment/VisaIcon.vue';
+import BehanceIcon from '@/components/icons/social-media/BehanceIcon.vue';
+import DribbbleIcon from '@/components/icons/social-media/DribbbleIcon.vue';
+import TelegramIcon from '@/components/icons/social-media/TelegramIcon.vue';
 
 const footerLists = [
     {
@@ -44,6 +44,17 @@ const footerLists = [
     }
 ];
 
+const sitesIcons = [
+    { id: 1, link: "https://www.behance.net", comp: BehanceIcon },
+    { id: 2, link: "https://dribbble.com/", comp: DribbbleIcon },
+    { id: 3, link: "https://web.telegram.org", comp: TelegramIcon },
+];
+const paymentIcons = [
+    { id: 1, comp: VisaIcon },
+    { id: 2, comp: MasterCardIcon },
+    { id: 3, comp: PayPalIcon },
+];
+
 </script>
 
 <template>
@@ -51,7 +62,6 @@ const footerLists = [
 
         <article class="footer-up">
             <section class="container footer-up__wrapper">
-
                 <article class="footer__discover">
                     <LogoIcon class="logo-icon" />
                     <p class="body-text body-text_lighten">
@@ -59,19 +69,9 @@ const footerLists = [
                         Descover the Deco difference today!
                     </p>
                     <ul class="list social-media">
-                        <li>
-                            <a href="https://www.behance.net" target="_blank">
-                                <BehanceIcon class="icon" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://dribbble.com/" target="_blank">
-                                <DribbbleIcon class="icon" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://web.telegram.org" target="_blank">
-                                <TelegramIcon class="icon" />
+                        <li v-for="item in sitesIcons" :key="item.id">
+                            <a :href="item.link" target="_blank">
+                                <component :is="item.comp" class="icon" />
                             </a>
                         </li>
                     </ul>
@@ -80,7 +80,6 @@ const footerLists = [
                 <FooterList v-for="list in footerLists" :title="list.title" :key="list.id">
                     <RouterLink v-for="link in list.links" to="/" class="body-text body-text_lighten">{{ link }}</RouterLink>
                 </FooterList>
-
             </section>
         </article>
 
@@ -91,14 +90,8 @@ const footerLists = [
                 <p class="body-text">©Copyright 2024 | Deco Powered by Elevate UX Squad</p>
 
                 <ul class="list payments">
-                    <li>
-                        <VisaIcon class="payments__visa icon" />
-                    </li>
-                    <li>
-                        <PayPalIcon class="icon" />
-                    </li>
-                    <li>
-                        <MasterCardIcon class="icon" />
+                    <li v-for="item in paymentIcons" :key="item.id">
+                        <component :is="item.comp" class="icon"/>
                     </li>
                 </ul>
             </section>
@@ -108,14 +101,15 @@ const footerLists = [
 </template>
 
 <style scoped lang="scss">
-@import '../../scss/_colors.scss';
-@import '../../scss/_other.scss';
+@import '@/scss/_colors.scss';
+@import '@/scss/_other.scss';
 
 .footer {
     display: flex;
     flex-direction: column;
     gap: 50px;
     margin-top: 300px;
+    margin-bottom: 50px;
 
     &-up__wrapper {
         display: flex;

@@ -19,8 +19,8 @@ const props = defineProps<Props>()
 
 
 <style scoped lang="scss">
-@import '../../scss/_colors.scss';
-@import '../../scss/_other.scss';
+@import '@/scss/_colors.scss';
+@import '@/scss/_other.scss';
 
 .footer-up__list {
     display: flex;
