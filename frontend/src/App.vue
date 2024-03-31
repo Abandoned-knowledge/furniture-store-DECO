@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import Footer from './components/footer/Footer.vue';
 import Header from './components/Header.vue';
+import Slider from './components/Slider.vue';
 
 </script>
 
 <template>
   <Header/>
 
-  <h1>main</h1>
+  <Slider/>
 
   <Footer/>
 </template>

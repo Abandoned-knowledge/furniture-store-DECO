@@ -98,6 +98,7 @@ import TelegramIcon from '../icons/social-media/TelegramIcon.vue';
     display: flex;
     flex-direction: column;
     gap: 50px;
+    margin-top: 300px;
     &-up__wrapper {
         display: flex;
         justify-content: space-between;
