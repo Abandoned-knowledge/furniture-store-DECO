@@ -37,7 +37,6 @@ let slideIndex: number = ref(0);
 
 let paginationItem = ref();
 
-
 function selectPaginationItem(index: number) {
     let pagArr = paginationItem._rawValue;
     if (pagArr) {
@@ -117,12 +116,14 @@ onMounted(() => {
         bottom: 30%;
         display: flex;
         flex-direction: column;
+        z-index: 5;
     }
 
     &__photo {
         min-width: 100%;
         height: 100%;
         object-fit: cover;
+        filter: brightness(0.6);
     }
 }
 </style>

@@ -49,6 +49,7 @@ const sitesIcons = [
     { id: 2, link: "https://dribbble.com/", comp: DribbbleIcon },
     { id: 3, link: "https://web.telegram.org", comp: TelegramIcon },
 ];
+
 const paymentIcons = [
     { id: 1, comp: VisaIcon },
     { id: 2, comp: MasterCardIcon },
@@ -70,9 +71,7 @@ const paymentIcons = [
                     </p>
                     <ul class="list social-media">
                         <li v-for="item in sitesIcons" :key="item.id">
-                            <a :href="item.link" target="_blank">
-                                <component :is="item.comp" class="icon" />
-                            </a>
+                            <a :href="item.link" target="_blank"> <component :is="item.comp" class="icon"/> </a>
                         </li>
                     </ul>
                 </article>
@@ -115,6 +114,21 @@ const paymentIcons = [
         display: flex;
         justify-content: space-between;
 
+        @media screen and (max-width: 1024px) {
+            display: grid;
+            gap: 50px;
+            grid-template-columns: repeat(2, auto);
+            width: max-content;
+
+        }
+        @media screen and (max-width: 700px) {
+            display: flex;
+            gap: 50px;
+            flex-direction: column;
+            width: max-content;
+            align-items: center;
+        }
+
         p {
             line-height: 2rem;
         }
@@ -123,7 +137,12 @@ const paymentIcons = [
     &__discover {
         display: flex;
         flex-direction: column;
-        width: 400px;
+        max-width: 400px;
+
+        @media screen and (max-width: 700px) {
+            text-align: center;
+            align-items: center;
+        }
 
         .social-media {
             display: flex;
