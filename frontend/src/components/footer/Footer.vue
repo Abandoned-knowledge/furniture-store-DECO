@@ -71,13 +71,16 @@ const paymentIcons = [
                     </p>
                     <ul class="list social-media">
                         <li v-for="item in sitesIcons" :key="item.id">
-                            <a :href="item.link" target="_blank"> <component :is="item.comp" class="icon"/> </a>
+                            <a :href="item.link" target="_blank">
+                                <component :is="item.comp" class="icon" />
+                            </a>
                         </li>
                     </ul>
                 </article>
 
                 <FooterList v-for="list in footerLists" :title="list.title" :key="list.id">
-                    <RouterLink v-for="link in list.links" to="/" class="body-text body-text_lighten">{{ link }}</RouterLink>
+                    <RouterLink v-for="link in list.links" to="/" class="body-text body-text_lighten">{{ link }}
+                    </RouterLink>
                 </FooterList>
             </section>
         </article>
@@ -86,11 +89,11 @@ const paymentIcons = [
 
         <article class="footer-down">
             <section class="container footer-down__wrapper">
-                <p class="body-text">©Copyright 2024 | Deco Powered by Elevate UX Squad</p>
+                <p class="body-text" style="text-align: center;">©Copyright 2024 | Deco Powered by Elevate UX Squad</p>
 
                 <ul class="list payments">
                     <li v-for="item in paymentIcons" :key="item.id">
-                        <component :is="item.comp" class="icon"/>
+                        <component :is="item.comp" class="icon" />
                     </li>
                 </ul>
             </section>
@@ -121,6 +124,7 @@ const paymentIcons = [
             width: max-content;
 
         }
+
         @media screen and (max-width: 700px) {
             display: flex;
             gap: 50px;
@@ -138,7 +142,8 @@ const paymentIcons = [
         display: flex;
         flex-direction: column;
         max-width: 400px;
-
+        min-width: none;
+        
         @media screen and (max-width: 700px) {
             text-align: center;
             align-items: center;
@@ -161,6 +166,11 @@ const paymentIcons = [
             align-items: center;
             gap: 40px;
         }
+
+        @media screen and (max-width: 700px) {
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 
     .icon {
@@ -174,6 +184,7 @@ const paymentIcons = [
 
     .logo-icon {
         width: 300px;
+        min-width: 100px;
         height: auto;
     }
 }

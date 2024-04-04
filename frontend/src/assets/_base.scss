@@ -3,4 +3,9 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+[v-cloak]{
+  display: none;
 }
