@@ -6,7 +6,7 @@ import ProfileIcon from '@/components/icons/header/ProfileIcon.vue';
 import LikeHeartIcon from '@/components/icons/header/LikeHeartIcon.vue';
 import BagIcon from '@/components/icons/header/BagIcon.vue';
 import BurgerMenu from "./BurgerMenu.vue";
-import { ref, type Component, onMounted, onUnmounted, onBeforeMount } from 'vue';
+import { ref, type Component, onMounted, onUnmounted } from 'vue';
 
 export interface MainNav { id: number | string, text: string, route: string };
 const mainNav: MainNav[] = [

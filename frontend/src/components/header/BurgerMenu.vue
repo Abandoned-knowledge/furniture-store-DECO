@@ -3,7 +3,7 @@ import { ref, type Ref } from 'vue';
 import type { MainNav } from './Header.vue';
 import type { AddNav } from './Header.vue';
 
-let isActive: Ref<boolean | undefined> = ref(true);
+let isActive: Ref<boolean | undefined> = ref(false);
 
 interface Props {
     mainNav: MainNav[],

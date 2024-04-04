@@ -6,7 +6,7 @@ $font: "Space Grotesk", sans-serif;
   width: 95%;
   max-width: 1500px;
   margin: 0 auto;
-  padding: 0 30px;
+  // padding: 0 30px
 }
 
 .white {
@@ -28,6 +28,7 @@ $font: "Space Grotesk", sans-serif;
   font-family: $font;
   color: $colorDark;
   text-decoration: none;
+  margin: 0;
 
   &_lighten {
     color: lighten($colorDark, 30);
