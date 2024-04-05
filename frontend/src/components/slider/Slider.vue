@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, type Ref } from 'vue';
 
 interface SliderContent {
     id: number | string,
@@ -33,7 +33,7 @@ const sliderContent: SliderContent[] = [
     },
 ];
 
-let slideIndex: number = ref(0);
+let slideIndex: Ref<number> = ref(0);
 
 let paginationItem = ref();
 
@@ -63,7 +63,7 @@ onMounted(() => {
             :style="{ transform: `translateX(-${slideIndex}00%)` }">
             <section class="slider__text">
                 <h1 class="h1-text white">{{ content.title }}</h1>
-                <a :href="content.route" class="h2-text white">{{ content.routeName }}</a>
+                <a :href="content.route" class="slider__link">{{ content.routeName }}</a>
             </section>
             <img :src="content.imgSrc" class="slider__photo" :alt="content.title">
         </article>
@@ -81,6 +81,12 @@ onMounted(() => {
     height: 700px;
     overflow: hidden;
     position: relative;
+    &__link{
+        font-family: $font;
+        color: white;
+        font-size: 30px;
+        text-decoration: underline;
+    }
 
     &__pagination {
         position: absolute;
