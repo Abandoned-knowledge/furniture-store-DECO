@@ -20,7 +20,7 @@ const BenefitsItems: BenefitsItems[] = [
     <article class="container benefits">
         <article v-for="item in BenefitsItems" class="benefit">
             <component :is="item.icon" class="benefit__icon" />
-            <p class="body-text body-text_title">{{ item.title }}</p>
+            <p class="title-text">{{ item.title }}</p>
             <p class="body-text body-text_lighten">{{ item.subtitle }}</p>
         </article>
     </article>
@@ -29,8 +29,7 @@ const BenefitsItems: BenefitsItems[] = [
 
 
 <style scoped lang="scss">
-@import '@/scss/_colors';
-@import '@/scss/_other';
+@import '@/scss/main';
 
 .benefits {
     display: flex;
@@ -58,10 +57,11 @@ const BenefitsItems: BenefitsItems[] = [
         fill: $colorAccent;
     }
 
-    @media screen and (max-width: 1024px) {
+    @include mQ(nb) {
         width: 40%;
     }
-    @media screen and (max-width: 600px) {
+
+    @include mQ(tt) {
         width: 100%;
         margin-left: 50px;
         margin-right: 50px;

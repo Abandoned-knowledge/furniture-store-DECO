@@ -34,8 +34,7 @@ const props = defineProps<Props>()
 
 
 <style scoped lang="scss">
-@import '@/scss/_colors.scss';
-@import '@/scss/_other.scss';
+@import '@/scss/main';
 
 .burger-icon {
     display: flex;

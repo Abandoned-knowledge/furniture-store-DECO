@@ -9,15 +9,14 @@
             <p class="body-text body-text_lighten">Your one-stop destination for stylish and affordable furniture. We
                 offer a wide range of high-quality pieces, from classic to contemporary, designed to enhance every room
                 in your home.</p>
-            <RouterLink to="/" class="body-text body-text_title body-text_accent">Discover More</RouterLink>
+            <RouterLink to="/" class="title-text accent">Discover More</RouterLink>
         </section>
         <img src="@/assets/photo4.jpg" alt="furniture photo" class="discover__img">
     </article>
 </template>
 
 <style scoped lang="scss">
-@import '@/scss/_colors.scss';
-@import '@/scss/_other.scss';
+@import '@/scss/main';
 
 .discover {
     display: flex;
@@ -40,7 +39,7 @@
         object-fit: cover;
     }
 
-    .body-text_accent {
+    .title-text {
         position: relative;
         display: flex;
         align-items: center;

@@ -9,7 +9,7 @@ const props = defineProps<Props>()
 
 <template>
     <article class="footer-up__list">
-        <p class="body-text body-text_title">{{ props.title }}</p>
+        <p class="title-text">{{ props.title }}</p>
         <div class="accent-line"></div>
         <ul class="list">
             <slot></slot>
@@ -19,8 +19,7 @@ const props = defineProps<Props>()
 
 
 <style scoped lang="scss">
-@import '@/scss/_colors.scss';
-@import '@/scss/_other.scss';
+@import '@/scss/main';
 
 .footer-up__list {
     display: flex;

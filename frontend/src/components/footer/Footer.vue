@@ -103,8 +103,7 @@ const paymentIcons = [
 </template>
 
 <style scoped lang="scss">
-@import '@/scss/_colors.scss';
-@import '@/scss/_other.scss';
+@import '@/scss/main';
 
 .footer {
     display: flex;
@@ -117,20 +116,19 @@ const paymentIcons = [
         display: flex;
         justify-content: space-between;
 
-        @media screen and (max-width: 1024px) {
-            display: grid;
-            gap: 50px;
-            grid-template-columns: repeat(2, auto);
+        @include mQ(nb) {
             width: max-content;
-
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 50px;
         }
 
-        @media screen and (max-width: 700px) {
-            display: flex;
-            gap: 50px;
-            flex-direction: column;
+        @include mQ(tt) {
             width: max-content;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            gap: 50px;
         }
 
         p {
@@ -141,10 +139,16 @@ const paymentIcons = [
     &__discover {
         display: flex;
         flex-direction: column;
-        max-width: 400px;
-        min-width: none;
-        
-        @media screen and (max-width: 700px) {
+        width: 400px;
+        gap: 30px;
+
+        @include mQ(tt) {
+            width: 350px;
+            text-align: center;
+            align-items: center;
+        }
+        @include mQ(mob) {
+            width: 300px;
             text-align: center;
             align-items: center;
         }
@@ -167,14 +171,10 @@ const paymentIcons = [
             gap: 40px;
         }
 
-        @media screen and (max-width: 700px) {
+        @include mQ(tt) {
             flex-direction: column;
             justify-content: center;
         }
-    }
-
-    .icon {
-        fill: $colorDark;
     }
 
     &__line {
@@ -183,8 +183,7 @@ const paymentIcons = [
     }
 
     .logo-icon {
-        width: 300px;
-        min-width: 100px;
+        width: 80%;
         height: auto;
     }
 }

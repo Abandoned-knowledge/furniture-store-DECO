@@ -2,6 +2,7 @@
 import Slider from '@/components/slider/Slider.vue';
 import Benefits from '@/components/benefits/Benefits.vue';
 import DiscoverMore from '@/components/infoBlocks/DiscoverMore.vue';
+import BestSeller from '@/components/bestSeller/BestSeller.vue';
 
 </script>
 
@@ -9,6 +10,7 @@ import DiscoverMore from '@/components/infoBlocks/DiscoverMore.vue';
     <Slider />
     <Benefits />
     <DiscoverMore />
+    <BestSeller />
 </template>
 
 <style scoped>

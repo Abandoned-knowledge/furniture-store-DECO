@@ -1,0 +1,23 @@
+@import "./mixins";
+
+.h1-text {
+  @include base-text(70px, bold, white);
+}
+
+.h2-text {
+  @include base-text(35px, 600);
+}
+
+.title-text {
+  @include base-text(20px, bold);
+}
+
+.body-text {
+  @include base-text(16px);
+  line-height: 130%;
+  word-spacing: 120%;
+
+  &_lighten {
+    color: lighten($colorDark, 30);
+  }
+}

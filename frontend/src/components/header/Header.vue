@@ -45,7 +45,7 @@ onUnmounted(() => {
 
 <template>
     <header class="header">
-        <section class="header__wrapper" :class="{'container' : isScreenMore1024}">
+        <section class="header__wrapper" :class="{ 'container': isScreenMore1024 }">
 
             <RouterLink to="/">
                 <LogoIcon class="logo-icon" />
@@ -72,8 +72,7 @@ onUnmounted(() => {
 
 
 <style scoped lang="scss">
-@import '@/scss/_colors.scss';
-@import '@/scss/_other.scss';
+@import '@/scss/main';
 
 .header {
     border-bottom: 1px solid lighten($colorGrey, 25);
@@ -114,11 +113,6 @@ onUnmounted(() => {
         display: flex;
         gap: 3px;
     }
-}
-
-
-.icon {
-    fill: $colorDark;
 }
 
 .logo-icon {

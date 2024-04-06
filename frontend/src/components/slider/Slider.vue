@@ -35,12 +35,12 @@ const sliderContent: SliderContent[] = [
 
 let slideIndex: Ref<number> = ref(0);
 
-let paginationItem = ref();
+let paginationItem = ref([]);
 
 function selectPaginationItem(index: number) {
-    let pagArr = paginationItem._rawValue;
+    let pagArr = paginationItem.value;
     if (pagArr) {
-        pagArr.forEach((el) => {
+        pagArr.forEach((el: any) => {
             el.classList.remove("slider__pagination_selected");
         })
         pagArr[index].classList.add("slider__pagination_selected");
@@ -62,7 +62,7 @@ onMounted(() => {
         <article v-for="content in sliderContent" :key="content.id" class="slider__item"
             :style="{ transform: `translateX(-${slideIndex}00%)` }">
             <section class="slider__text">
-                <h1 class="h1-text white">{{ content.title }}</h1>
+                <h1 class="h1-text">{{ content.title }}</h1>
                 <a :href="content.route" class="slider__link">{{ content.routeName }}</a>
             </section>
             <img :src="content.imgSrc" class="slider__photo" :alt="content.title">
@@ -72,8 +72,7 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-@import '@/scss/_colors';
-@import '@/scss/_other';
+@import '@/scss/main';
 
 .slider {
     display: flex;
@@ -81,7 +80,8 @@ onMounted(() => {
     height: 700px;
     overflow: hidden;
     position: relative;
-    &__link{
+
+    &__link {
         font-family: $font;
         color: white;
         font-size: 30px;
@@ -122,6 +122,7 @@ onMounted(() => {
         bottom: 30%;
         display: flex;
         flex-direction: column;
+        gap: 40px;
         z-index: 5;
     }
 
