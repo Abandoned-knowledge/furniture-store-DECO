@@ -27,7 +27,7 @@ const switcherItems: SwitcherItems[] = [
 </script>
 
 <template>
-    <article class="container">
+    <article class="container page">
         <h2 class="h2-text"> Our Best Seller</h2>
 
         <article class="switcher">
@@ -45,6 +45,15 @@ const switcherItems: SwitcherItems[] = [
 
 <style scoped lang="scss">
 @import '@/scss/main';
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 75px;
+}
 
 .switcher {
     background-color: lighten($colorGrey, 35);

@@ -45,6 +45,7 @@ onUnmounted(() => {
 
 <template>
     <header class="header">
+
         <section class="header__wrapper" :class="{ 'container': isScreenMore1024 }">
 
             <RouterLink to="/">
