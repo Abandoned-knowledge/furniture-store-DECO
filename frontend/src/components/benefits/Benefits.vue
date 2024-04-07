@@ -17,13 +17,13 @@ const BenefitsItems: BenefitsItems[] = [
 
 <template>
 
-    <article class="container benefits">
+    <section class="container benefits">
         <article v-for="item in BenefitsItems" class="benefit">
             <component :is="item.icon" class="benefit__icon" />
             <p class="title-text">{{ item.title }}</p>
             <p class="body-text body-text_lighten">{{ item.subtitle }}</p>
         </article>
-    </article>
+    </section>
 
 </template>
 

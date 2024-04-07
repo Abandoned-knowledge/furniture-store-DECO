@@ -61,7 +61,7 @@ const paymentIcons = [
 <template>
     <footer class="footer">
 
-        <article class="footer-up">
+        <section class="footer-up">
             <section class="container footer-up__wrapper">
                 <article class="footer__discover">
                     <LogoIcon class="logo-icon" />
@@ -83,11 +83,11 @@ const paymentIcons = [
                     </RouterLink>
                 </FooterList>
             </section>
-        </article>
+        </section>
 
         <div class="footer__line"></div>
 
-        <article class="footer-down">
+        <section class="footer-down">
             <section class="container footer-down__wrapper">
                 <p class="body-text" style="text-align: center;">©Copyright 2024 | Deco Powered by Elevate UX Squad</p>
 
@@ -97,7 +97,7 @@ const paymentIcons = [
                     </li>
                 </ul>
             </section>
-        </article>
+        </section>
 
     </footer>
 </template>
@@ -147,6 +147,7 @@ const paymentIcons = [
             text-align: center;
             align-items: center;
         }
+
         @include mQ(mob) {
             width: 300px;
             text-align: center;

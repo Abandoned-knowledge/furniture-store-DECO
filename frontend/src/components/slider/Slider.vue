@@ -53,7 +53,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <article class="slider">
+    <section class="slider">
         <section v-if="sliderContent.length > 0" class="slider__pagination">
             <div v-for="n in sliderContent.length" class="slider__pagination_circle"
                 @click="[slideIndex = n - 1, selectPaginationItem(n - 1)]" :key="n" ref="paginationItem"></div>
@@ -68,7 +68,7 @@ onMounted(() => {
             <img :src="content.imgSrc" class="slider__photo" :alt="content.title">
         </article>
 
-    </article>
+    </section>
 </template>
 
 <style scoped lang="scss">
