@@ -49,13 +49,33 @@ const switcherItems: SwitcherItemsInter[] = [
                 productPhoto: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 title: "white sofa",
                 price: 54
-            }
+            },
+            {
+                productPhoto: "https://images.unsplash.com/photo-1550226891-ef816aed4a98?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZ1cm5pdHVyZXxlbnwwfHwwfHx8MA%3D%3D",
+                title: "orange furniture",
+                price: 23
+            },
         ],
     },
     {
         id: 2,
         title: "Best Seller",
         items: [
+            {
+                productPhoto: "https://images.unsplash.com/photo-1550226891-ef816aed4a98?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZ1cm5pdHVyZXxlbnwwfHwwfHx8MA%3D%3D",
+                title: "orange furniture",
+                price: 23
+            },
+            {
+                productPhoto: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                title: "white sofa",
+                price: 54
+            },
+            {
+                productPhoto: "https://images.unsplash.com/photo-1550226891-ef816aed4a98?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZ1cm5pdHVyZXxlbnwwfHwwfHx8MA%3D%3D",
+                title: "orange furniture",
+                price: 23
+            },
             {
                 productPhoto: "https://images.unsplash.com/photo-1550226891-ef816aed4a98?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGZ1cm5pdHVyZXxlbnwwfHwwfHx8MA%3D%3D",
                 title: "orange furniture",
@@ -77,6 +97,16 @@ const switcherItems: SwitcherItemsInter[] = [
         id: 3,
         title: "Top Rates",
         items: [
+            {
+                productPhoto: "https://images.unsplash.com/photo-1540932239986-30128078f3c5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                title: "lamps",
+                price: 15,
+            },
+            {
+                productPhoto: "https://images.unsplash.com/photo-1540932239986-30128078f3c5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                title: "lamps",
+                price: 15,
+            },
             {
                 productPhoto: "https://images.unsplash.com/photo-1540932239986-30128078f3c5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 title: "lamps",
@@ -170,6 +200,15 @@ const switcherItems: SwitcherItemsInter[] = [
 .items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: max-content;
     gap: 40px;
+
+    @include mQ(nb) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mQ(mob) {
+        grid-template-columns: 1fr;
+    }
 }
 </style>

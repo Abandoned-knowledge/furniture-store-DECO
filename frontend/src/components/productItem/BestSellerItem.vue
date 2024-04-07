@@ -22,12 +22,14 @@ const props = defineProps<Props>();
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 300px;
-    // height: auto;
+    width: 100%;
+    height: 100%;
 
     &__photo {
         width: 100%;
-        height: 400px;
+        height: 100%;
+        min-height: 250px;
+        max-height: 400px;
         object-fit: cover;
         border-radius: 15px;
     }
