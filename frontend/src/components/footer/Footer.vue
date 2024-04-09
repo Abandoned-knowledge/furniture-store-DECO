@@ -109,7 +109,7 @@ const paymentIcons = [
     display: flex;
     flex-direction: column;
     gap: 50px;
-    margin-top: 300px;
+    margin-top: 100px;
     margin-bottom: 50px;
 
     &-up__wrapper {

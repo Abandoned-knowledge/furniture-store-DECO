@@ -129,7 +129,7 @@ const switcherItems: SwitcherItemsInter[] = [
 
 <template>
     <section class="container">
-        <h2 class="h2-text"> Our Best Seller</h2>
+        <h2 class="h2-text h2-text_underline"> Our Best Seller</h2>
 
         <article class="switcher">
             <p v-for="item in switcherItems" :key="item.id" class="switcher__item body-text" ref="switcherItem"

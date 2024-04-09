@@ -54,7 +54,7 @@ onUnmounted(() => {
 
             <BurgerMenu :main-nav="mainNav" :add-nav="addNav" v-if="screenWidth < 1024" />
             <nav class="nav" v-if="screenWidth > 1024">
-                <!-- <RouterLink v-for="item in mainNav" :to="item.route" :key="item.id" class="body-text">{{ item.text }}</RouterLink> -->
+                <RouterLink v-for="item in mainNav" :to="item.route" :key="item.id" class="body-text">{{ item.text }}</RouterLink>
             </nav>
 
             <nav class="nav add-nav" v-if="screenWidth > 1024">
@@ -62,10 +62,10 @@ onUnmounted(() => {
                     <SearchIcon class="icon" />
                 </button>
 
-                <!-- <RouterLink v-for="item in addNav" :to="item.route">
+                <RouterLink v-for="item in addNav" :to="item.route">
                     <component :is="item.icon" class="icon" />
                     <div v-if="item.hasAddElement" :class="item.elementClass"></div>
-                </RouterLink> -->
+                </RouterLink>
             </nav>
         </section>
     </header>

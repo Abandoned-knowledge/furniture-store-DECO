@@ -4,6 +4,9 @@ import Benefits from '@/components/benefits/Benefits.vue';
 import DiscoverMore from '@/components/infoBlocks/DiscoverMore.vue';
 import BestSeller from '@/components/bestSeller/BestSeller.vue';
 import BigSale from '@/components/infoBlocks/BigSale.vue';
+import DealsDay from '@/components/dealsDay/DealsDay.vue';
+import Blogs from '@/components/blogs/Blogs.vue';
+import Newsletter from '@/components/newsletter/Newsletter.vue';
 </script>
 
 <template>
@@ -12,7 +15,9 @@ import BigSale from '@/components/infoBlocks/BigSale.vue';
     <DiscoverMore />
     <BestSeller />
     <BigSale />
-
+    <DealsDay />
+    <Blogs />
+    <Newsletter />
 </template>
 
 <style scoped lang="scss">
