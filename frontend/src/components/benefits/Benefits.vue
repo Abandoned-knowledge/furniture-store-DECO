@@ -36,7 +36,7 @@ const BenefitsItems: BenefitsItems[] = [
     gap: 50px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 75px;
+    margin-top: 150px;
 }
 
 .benefit {
@@ -45,7 +45,7 @@ const BenefitsItems: BenefitsItems[] = [
     display: grid;
     grid-template-columns: repeat(2, auto);
     align-items: center;
-    background: lighten($colorGrey, 35);
+    background: lighten($colorGrey, 15);
     border-radius: 15px;
     gap: 20px;
     padding: 20px;
