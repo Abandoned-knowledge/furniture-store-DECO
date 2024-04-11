@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import CalendarIcon from '@/components/icons/blogs/CalendarIcon.vue';
-import CommentIcon from '@/components/icons/blogs/CommentIcon.vue';
-import EditIcon from '@/components/icons/blogs/EditIcon.vue';
+import BlogItem from './BlogItem.vue';
 
-interface blogsInfoInter {
+export interface blogsInfoInter {
     id: number,
     title: string,
     description: string,
@@ -21,7 +19,7 @@ const blogsInfo: blogsInfoInter[] = [
         photo: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         author: "admin",
         date: "April 4, 2024",
-        commentsCount: 2,
+        commentsCount: 11,
     },
     {
         id: 2,
@@ -49,7 +47,20 @@ const blogsInfo: blogsInfoInter[] = [
     <section class="container">
         <h2 class="h2-text" style="width: fit-content;">The Blog</h2>
         <section class="blogs">
-            <article class="blog" v-for="item in blogsInfo" :key="item.id">
+
+            <BlogItem 
+            v-for="item in blogsInfo"
+            :key="item.id"
+            :id="item.id"
+            :title="item.title"
+            :photo="item.photo"
+            :description="item.description"
+            :author="item.author"
+            :date="item.date"
+            :comments-count="item.commentsCount"
+            />
+
+            <!-- <article class="blog" v-for="item in blogsInfo" :key="item.id">
                 <img :src="item.photo" alt="blog's image" class="blog__img">
                 <section class="blog__content">
                     <section class="blog__creature">
@@ -71,7 +82,8 @@ const blogsInfo: blogsInfoInter[] = [
 
                     <a class="blog__btn title-text">Read More</a>
                 </section>
-            </article>
+            </article> -->
+
         </section>
     </section>
 </template>
@@ -101,57 +113,6 @@ const blogsInfo: blogsInfoInter[] = [
     @include mQ(tt) {
         grid-template-columns: 1fr;
         padding: 0 5%;
-    }
-}
-
-.blog {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-
-    @include mQ(tt) {
-        gap: 20px;
-    }
-
-    &__content {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding-right: 10%;
-
-        @include mQ(tt) {
-        gap: 15px;
-    }
-    }
-
-    &__img {
-        width: 100%;
-        height: auto;
-        border-radius: 15px;
-        object-fit: cover;
-    }
-
-    &__creature {
-        display: flex;
-        gap: 30px;
-    }
-
-    &__creature-info {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-
-    &__title {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    &__btn {
-        cursor: pointer;
-        width: fit-content;
     }
 }
 </style>
