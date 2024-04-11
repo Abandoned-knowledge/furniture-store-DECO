@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import LikeHeartIcon from '../icons/header/LikeHeartIcon.vue';
 import CloakIcon from '../icons/other/CloakIcon.vue';
 import SquaresIcon from '../icons/other/SquaresIcon.vue';
+
+const itemPrice = computed(() => `$${props.price}.00`);
 
 interface itemsInter {
     id: number,
@@ -24,7 +27,7 @@ const props = defineProps<itemsInter>()
 
                 <section class="item__title">
                     <p class="title-text">{{ $props.title }}</p>
-                    <p class="body-text body-text_bold accent">${{ $props.price }}.00</p>
+                    <p class="body-text body-text_bold accent">{{ itemPrice }}</p>
                 </section>
 
                 <hr>
