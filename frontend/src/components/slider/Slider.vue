@@ -35,8 +35,16 @@ const sliderContent: SliderContent[] = [
 
 let slideIndex: Ref<number> = ref(0);
 
-let paginationItem = ref([]);
+function changeSliderItem() {
+    setInterval(() => {
+        slideIndex.value++;
+        if (slideIndex.value > sliderContent.length - 1) slideIndex.value = 0;
+        selectPaginationItem(slideIndex.value);
+    }, 20000);
+}
+changeSliderItem();
 
+let paginationItem = ref([]);
 function selectPaginationItem(index: number) {
     let pagArr = paginationItem.value;
     if (pagArr) {
