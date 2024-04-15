@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Details from '@/components/about/Details.vue';
 import Benefits from '@/components/benefits/Benefits.vue';
+import TeamMembers from '@/components/teamMembers/teamMembers.vue';
+
 </script>
 
 <template>
@@ -16,6 +18,7 @@ import Benefits from '@/components/benefits/Benefits.vue';
 
     <Details />
     <Benefits />
+    <TeamMembers />
 </template>
 
 <style scoped lang="scss">
